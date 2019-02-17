@@ -3,20 +3,23 @@
  * @return {number}
  */
 var reverse = function(x) {
-    let xh = Math.pow(2,31) - 1;
-    let xl = Math.pow(-2, 31);
     let signed = false;
 
     if (x < 0)
         signed = true;
 
-    let k = parseInt(x.toString().replace("-",'').split('').reverse().join(''));
+    let k = x.toString().replace("-", '');
+    let y = "";
+
+    for (let i = 0; i < k.length; i++) {
+        y += k[k.length - (i + 1)];
+    }
 
     if (signed)
-        k = k * -1;
+        y = "-" + y;
 
-    if (k > xh || k < xl)
+    if (y > 2147483647 || y < -2147483648)
         return 0;
 
-    return k;
+    return y;
 };
