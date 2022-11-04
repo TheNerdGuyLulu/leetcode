@@ -1,7 +1,7 @@
 /**
- * @param {number[]} nums
- * @return {number}
- */
+* @param {number[]} nums
+* @return {number}
+*/
 var mostFrequentEven = function (nums) {
     const len = nums.length;
     const map = new Map();
@@ -24,5 +24,3 @@ var mostFrequentEven = function (nums) {
 
     return x[0];
 };
-
-console.log(mostFrequentEven([8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290]))
